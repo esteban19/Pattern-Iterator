@@ -31,7 +31,8 @@ namespace IteratorPatternCSharp
             iterate.First();
             while (!iterate.IsDone())
             {
-                Console.WriteLine(iterate.Next());
+                Console.WriteLine("1:{0}",iterate.CurrentItem());//current
+                Console.WriteLine("2:{0}",iterate.Next());//current,advanceby(1)
             }
         }
     }

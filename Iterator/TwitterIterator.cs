@@ -24,7 +24,17 @@ namespace IteratorPatternCSharp.Iterator
 
         public string Next()
         {
-            return users[position++];
+            string temp;
+            try
+            {
+                temp = users[position++];;//access, then advance
+                //++position -> advance, then access
+                return temp;
+            }
+            catch (Exception ex)
+            {
+                return "Message: " + ex.Message;
+            }
         }
 
         public bool IsDone()

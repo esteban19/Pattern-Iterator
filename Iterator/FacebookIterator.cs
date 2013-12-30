@@ -24,9 +24,19 @@ namespace IteratorPatternCSharp.Iterator
 
         public string Next()
         {
-            return users.ElementAt(position++);
+            string temp;
+            try
+            {
+                temp = users.ElementAt(position++);//access, then advance
+                //++position -> advance, then access
+                return temp;
+            }
+            catch (Exception ex)
+            {
+                return "Message: " + ex.Message;
+            }
         }
-
+ 
         public bool IsDone()
         {
             return position >= users.Count;
